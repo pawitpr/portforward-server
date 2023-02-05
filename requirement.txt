@@ -1,0 +1,6 @@
+[+] express js 4.3
+[+] soket.io : Any version
+[+] body-parser [In built]
+[+] url : Any version
+[+] Node version : 14x, 16x ,18,
+[-] body-parser : Is old but u can use alternative
