@@ -1,6 +1,8 @@
 const app = require('express')();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+const io = require("socket.io")(server, {
+    maxHttpBufferSize: 1e8
+});
 const url = require("url");
 const bodyParser = require('body-parser');
 // Uses a Body parser that is old pakages
@@ -32,6 +34,7 @@ app.post('/*', (req, res) => {
     io.emit("page-request", obj);
     clientResponseRef = res;
 })
+
 
 io.on('connection', (socket) => {
     console.log('a node connected');
