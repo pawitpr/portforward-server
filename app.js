@@ -1,6 +1,9 @@
 const app = require('express')();
 const http = require('http').createServer(app);
-const io = require("socket.io")(http)
+const io = require("socket.io")(http , {
+    // ...
+    maxHttpBufferSize: 10e8
+  });
 const url = require("url");
 const bodyParser = require('body-parser');
 // Uses a Body parser that is old pakages
