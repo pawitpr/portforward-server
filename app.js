@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+
+const app = require('express')();
 const http = require('http').createServer(app);
 const io = require("socket.io")(http , {
     // ...
@@ -8,8 +8,8 @@ const io = require("socket.io")(http , {
 const url = require("url");
 
 // Uses a Body parser that is old pakages
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const bodyparser = require('bodyparser')
+app.use(bodyparser)
 
 var clientResponseRef;
 app.get('/*', (req, res) => {
