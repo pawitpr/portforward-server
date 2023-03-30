@@ -8,7 +8,7 @@ const io = require("socket.io")(http , {
 const url = require("url");
 
 // Uses a Body parser that is old pakages
-const bodyparser = require('bodyparser')
+const bodyparser = require('body-parser')
 app.use(bodyparser)
 
 var clientResponseRef;
